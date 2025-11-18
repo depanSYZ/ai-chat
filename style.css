@@ -1,0 +1,139 @@
+:root {
+  --primary: #007bff;
+  --bg: #f5f7fa;
+  --user-bubble: #007bff;
+  --ai-bubble: #e9ecef;
+  --text: #333;
+  --light-gray: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  padding: 20px;
+}
+
+.chat-container {
+  max-width: 900px;
+  margin: 0 auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.header {
+  background: var(--primary);
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.avatar.ai {
+  background: #6c757d;
+}
+
+.avatar.user {
+  background: var(--primary);
+}
+
+.content {
+  max-width: 80%;
+  padding: 12px;
+  border-radius: 12px;
+  line-height: 1.5;
+}
+
+.content.user {
+  background: var(--user-bubble);
+  color: white;
+  align-self: flex-end;
+}
+
+.content.ai {
+  background: var(--ai-bubble);
+  color: var(--text);
+}
+
+.input-container {
+  display: flex;
+  padding: 16px;
+  border-top: 1px solid var(--light-gray);
+  gap: 10px;
+}
+
+#message-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: 24px;
+  outline: none;
+}
+
+#send-btn, .btn-upload {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-upload {
+  background: #6c757d;
+}
+
+@media (max-width: 600px) {
+  .chat-container {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .content {
+    max-width: 90%;
+  }
+}
